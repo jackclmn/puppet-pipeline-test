@@ -1,0 +1,21 @@
+FROM ubuntu:16.04
+RUN mkdir -p /app
+WORKDIR /app
+COPY . /app
+RUN apt-get update
+RUN apt-get install nodejs -y
+RUN apt install npm -y
+RUN echo node -v
+RUN echo npm -v
+# sudo
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+RUN apt-get update
+# sudo
+RUN apt-get install -y mongodb-org
+RUN service mongod start
+RUN npm install
+RUN ng test
+
+EXPOSE 4200
+CMD [ "npm", "start" ]
