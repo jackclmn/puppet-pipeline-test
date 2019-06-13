@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh 'apt update && apt upgrade'
                 sh 'apt install wget'
-                sh 'apt-get install libxss1 libappindicator1 libindicator7'
+                sh 'apt-get install -y libxss1 libappindicator1 libindicator7'
                 sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
                 sh 'apt install ./google-chrome*.deb'
             }
