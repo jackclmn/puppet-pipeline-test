@@ -19,7 +19,7 @@ app.use('/api', apiRouter);
 // mongoose connection
   mongoose
   .connect(
-    'mongodb://localhost/puppet-pipeline',
+    'mongodb://mongo/puppet-pipeline',
     { useNewUrlParser: true }
   );
 
