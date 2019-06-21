@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "luther007/jenkins-eks-automated"
+        registry = "luther007/jenkins-eks-automated-feature"
         registryCredential = 'docker-hub-credentials'
         dockerImage = ''
         AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
