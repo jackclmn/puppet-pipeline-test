@@ -3,3 +3,8 @@ charts/
 NOTICE
 LICENSE
 README.md
+node_modules
+Dockerfile
+.dockerignore
+npm-debug-log
+google*
