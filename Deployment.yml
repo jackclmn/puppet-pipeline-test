@@ -4,7 +4,7 @@ metadata:
   name: jenkins-eks-automated
   labels:
     app: mike
-  namespace: default
+  namespace: feature
 spec:
   replicas: 1
   minReadySeconds: 0
