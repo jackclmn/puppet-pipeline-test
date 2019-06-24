@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: mike1
-          image: luther007/jenkins-eks-automated:latest
+          image: luther007/jenkins-eks-automated-feature:latest
           ports:
             - containerPort: 4200
               hostPort: 4200
