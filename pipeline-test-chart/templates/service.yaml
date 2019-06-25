@@ -14,9 +14,10 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
-    - port: 4200
+    - port: 4201
       targetPort: 4200
       protocol: TCP
+      name: app
   selector:
     app.kubernetes.io/name: {{ include "pipeline-test-chart.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
