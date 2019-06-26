@@ -16,7 +16,7 @@ export class BaseDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getBaseDetails(this.route.snapshot.params['id']);
+    this.getBaseDetails(this.route.snapshot.params.id);
   }
   getBaseDetails(id) {
     this.api.getBase(id).subscribe(data => {

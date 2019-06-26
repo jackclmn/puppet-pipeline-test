@@ -20,7 +20,11 @@ spec:
   - port: {{ .Values.service.externalPort }}
     targetPort: {{ .Values.service.internalPort }}
     protocol: TCP
-    name: http
+    name: app
+  # - port: 4200
+  #   targetPort: 4200
+  #   protocol: TCP
+  #   name: app
   selector:
     app: {{ template "fullname" . }}
 {{- end }}

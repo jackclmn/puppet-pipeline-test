@@ -20,6 +20,7 @@ app.use('/api', apiRouter);
   mongoose
   .connect(
     'mongodb://gone-cheetah-mongodb/puppet-pipeline',
+    // 'mongodb://localhost/puppet-pipeline',
     { useNewUrlParser: true }
   );
 
