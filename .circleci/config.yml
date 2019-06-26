@@ -40,9 +40,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      # - run:
-      #     name: Lint
-      #     command: ~/node_modules/.bin/ng lint
+      - run:
+          name: Lint
+          command: npm run lint
       - run:
           name: Unit Test
           command: npm test
