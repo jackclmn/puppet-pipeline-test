@@ -21,7 +21,7 @@ references:
       - *set_environment_variables
       - run: prepare-kubectl
       - run: prepare-awscli
-      - run: kubectl get pods -A
+      - run: kubectl get pods
       - run: k8s-deploy-and-verify -f ${ROK8S_CONFIG}
 
 jobs:
