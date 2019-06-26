@@ -20,6 +20,7 @@ references:
       - checkout
       - *set_environment_variables
       - run: prepare-kubectl
+      - run: prepare-awscli
       - run: k8s-deploy-and-verify -f ${ROK8S_CONFIG}
 
 jobs:
