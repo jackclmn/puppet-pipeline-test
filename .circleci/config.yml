@@ -19,6 +19,7 @@ references:
     steps:
       - checkout
       - *set_environment_variables
+      - run: prepare-awscli
       - run: prepare-kubectl
       - run: k8s-deploy-and-verify -f ${ROK8S_CONFIG}
 
