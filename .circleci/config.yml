@@ -1,5 +1,4 @@
 version: 2
-
 references:
   set_environment_variables: &set_environment_variables
     run:
@@ -117,7 +116,7 @@ workflows:
           branches:
             ignore: /.*/
           tags:
-only: /\d+\.\d+\.\d+$/
+            only: /\d+\.\d+\.\d+$/
 
 
 # version: 2.1
