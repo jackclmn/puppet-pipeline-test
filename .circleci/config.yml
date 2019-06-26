@@ -36,13 +36,13 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
-      - run:
-          name: Lint
-          command: ~/node_modules/.bin/ng lint
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      # - run:
+      #     name: Lint
+      #     command: ~/node_modules/.bin/ng lint
       - run:
           name: Unit Test
           command: npm test
