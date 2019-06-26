@@ -21,6 +21,7 @@ references:
       - *set_environment_variables
       - run: prepare-kubectl
       - run: prepare-awscli
+      - run: kubectl get pods -A
       - run: k8s-deploy-and-verify -f ${ROK8S_CONFIG}
 
 jobs:
@@ -29,18 +30,18 @@ jobs:
       - image: luther007/cynerge_images:latest
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+      # - restore_cache:
+      #     keys:
+      #       - v1-dependencies-{{ checksum "package.json" }}
+      #       # fallback to using the latest cache if no exact match is found
+      #       - v1-dependencies-
       - run:
           name: Install Dependencies
           command: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Lint
           command: npm run lint
