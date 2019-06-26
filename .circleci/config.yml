@@ -54,6 +54,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - *set_environment_variables
+      - run: docker login -u="${docker_user}" -p="${docker_pass}"
       - run: "[[ -n ${ROK8S_NO_BUILD} ]] || docker-pull -f ${ROK8S_CONFIG}"
       - run: "[[ -n ${ROK8S_NO_BUILD} ]] || docker-build -f ${ROK8S_CONFIG}"
       - run: "[[ -n ${ROK8S_NO_BUILD} ]] || docker-push -f ${ROK8S_CONFIG}"
@@ -143,7 +144,7 @@ workflows:
 #     run:
 #       name: Build Docker Image
 #       command: |
-#         docker login -u="${docker_user}" -p="${docker_pass}"
+        # docker login -u="${docker_user}" -p="${docker_pass}"
 #         docker-pull -f deploy/production.config
 #         docker-build -f deploy/production.config
 #         docker-push -f deploy/production.config
