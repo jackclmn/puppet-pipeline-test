@@ -109,17 +109,17 @@ workflows:
         filters:
           branches:
             only:
-              - master
+              - staging
           tags:
             ignore: /.*/
     - deploy_production:
         # context: org-global
         filters:
           branches:
-            ignore: /.*/
+            only:
+              - production
           tags:
-            only: /\d+\.\d+\.\d+$/
-
+            ignore: /.*/
 
 # version: 2.1
 
