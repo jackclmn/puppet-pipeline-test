@@ -35,19 +35,19 @@ spec:
           - name: app 
             containerPort: 4200
             protocol: TCP
-        livenessProbe:
-          tcpSocket:
-            port: app
-          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-          successThreshold: {{ .Values.livenessProbe.successThreshold }}
-          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-        readinessProbe:
-          tcpSocket:
-            port: app
-          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-          successThreshold: {{ .Values.readinessProbe.successThreshold }}
-          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+        # livenessProbe:
+        #   tcpSocket:
+        #     port: app
+        #   initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+        #   periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+        #   successThreshold: {{ .Values.livenessProbe.successThreshold }}
+        #   timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+        # readinessProbe:
+        #   tcpSocket:
+        #     port: app
+        #   periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+        #   successThreshold: {{ .Values.readinessProbe.successThreshold }}
+        #   timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
