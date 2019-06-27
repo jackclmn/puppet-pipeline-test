@@ -27,8 +27,8 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-            - containerPort: 4200
-              hostPort: 4200
+            - name: app 
+              containerPort: 4200
               protocol: TCP
           livenessProbe:
             httpGet:
