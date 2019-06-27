@@ -16,12 +16,12 @@ knativeDeploy: false
 
 service:
   name: puppet-pipeline-test
-  type: ClusterIP
+  type: LoadBalancer
   externalPort: 4200
   internalPort: 4200
-  annotations:
-    fabric8.io/expose: "true"
-    fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
+  # annotations:
+  #   fabric8.io/expose: "true"
+  #   fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
 resources:
   limits:
     cpu: 400m
