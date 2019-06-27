@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: luther007/jenkins-eks-automated
-  tag: latest
+  repository: luther007/jenkins-eks-automated-feature
+  tag: feature
   pullPolicy: Always
 
 nameOverride: ""

@@ -10,11 +10,11 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.httpPort }}
-      targetPort: http
-      protocol: TCP
-      name: http
-    - port: 4201
+    # - port: {{ .Values.service.httpPort }}
+    #   targetPort: http
+    #   protocol: TCP
+    #   name: http
+    - port: 4200
       targetPort: 4200
       protocol: TCP
       name: app

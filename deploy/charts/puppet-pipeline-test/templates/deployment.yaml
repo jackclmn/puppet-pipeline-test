@@ -1,54 +1,52 @@
-{{- if .Values.knativeDeploy }}
-{{- else }}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ include "pipeline-test-chart.fullname" . }}
   labels:
-    draft: {{ default "draft-app" .Values.draft }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    app.kubernetes.io/name: {{ include "pipeline-test-chart.name" . }}
+    helm.sh/chart: {{ include "pipeline-test-chart.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "pipeline-test-chart.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        draft: {{ default "draft-app" .Values.draft }}
-        app: {{ template "fullname" . }}
-{{- if .Values.podAnnotations }}
-      annotations:
-{{ toYaml .Values.podAnnotations | indent 8 }}
-{{- end }}
+        app.kubernetes.io/name: {{ include "pipeline-test-chart.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
-        env:
-{{- range $pkey, $pval := .Values.env }}
-        - name: {{ $pkey }}
-          value: {{ $pval }}
-{{- end }}
-        ports:
-          # - name: http
-          #   containerPort: 80
-          #   protocol: TCP
-          - name: app 
-            containerPort: 4200
-            protocol: TCP
-        # livenessProbe:
-        #   tcpSocket:
-        #     port: app
-        #   initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-        #   periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-        #   successThreshold: {{ .Values.livenessProbe.successThreshold }}
-        #   timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-        # readinessProbe:
-        #   tcpSocket:
-        #     port: app
-        #   periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-        #   successThreshold: {{ .Values.readinessProbe.successThreshold }}
-        #   timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
-        resources:
-{{ toYaml .Values.resources | indent 12 }}
-      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
-{{- end }}
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            # - name: http
+            #   containerPort: 80
+            #   protocol: TCP
+            - name: app 
+              containerPort: 4200
+              protocol: TCP
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: app
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: app
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

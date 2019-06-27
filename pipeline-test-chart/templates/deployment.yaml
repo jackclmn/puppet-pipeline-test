@@ -30,12 +30,12 @@ spec:
             - name: app 
               containerPort: 4200
               protocol: TCP
-          livenessProbe:
-            tcpSocket:
-              port: app
-          readinessProbe:
-            tcpSocket:
-              port: app
+          # livenessProbe:
+          #   tcpSocket:
+          #     port: app
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: app
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
