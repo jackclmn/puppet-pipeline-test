@@ -10,7 +10,8 @@ references:
         echo 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}' >> ${BASH_ENV}
         echo 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}' >> ${BASH_ENV}
         echo 'export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}' >> ${BASH_ENV}
-        echo 'export CI_TAG=$CIRCLE_TAG' >> ${BASH_ENV}
+        # echo 'export CI_TAG=$CIRCLE_TAG' >> ${BASH_ENV}
+        echo 'export CI_TAG=${CI_TAG}' >> ${BASH_ENV}
         echo 'export ROK8S_INSTALL_PATH=${HOME}' >> ${BASH_ENV}
         echo 'export KUBECONFIG_DATA=${KUBECONFIG_DATA}' >> ${BASH_ENV}
   deploy_steps: &deploy_steps
