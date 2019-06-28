@@ -91,10 +91,10 @@ pipeline {
                 sh 'pwd'
                 sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
                 sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
-                // sh 'cp linux-amd64/helm /usr/local/bin/helm'
+                sh 'cp linux-amd64/helm /usr/local/bin/helm'
                 sh 'ls'
-                sh "linux-amd64/helm init --kubeconfig=$kubeConfig"
-                sh "linux-amd64/helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
+                sh "helm init --kubeconfig=$kubeConfig"
+                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
             }
         }
     }
