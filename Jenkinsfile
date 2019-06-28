@@ -87,6 +87,7 @@ pipeline {
                 sh 'printenv'
                 // sh 'cp cluster-config ~/.kube/'
                 // sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
+                sh 'helm init'
                 sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
             }
         }
