@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: luther007/jenkins-eks-automated-feature
-  tag: feature
+  tag: latest
   pullPolicy: Always
 
 # define environment variables here as a map of key: value
