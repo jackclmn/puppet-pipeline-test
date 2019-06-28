@@ -35,7 +35,7 @@ pipeline {
         stage('Dependencies') {
             steps {
                 echo 'Installing...'
-                sh 'printenv'
+                sh 'echo $GIT_BRANCH'
                 sh 'npm install'
             }
         }
