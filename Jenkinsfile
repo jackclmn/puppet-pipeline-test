@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "luther007/jenkins-eks-automated"
+        registry = "luther007/jenkins-eks-automated-feature"
         registryCredential = 'docker-hub-credentials'
         releaseName = 'mike'
         chartPath = '~/deploy/charts/puppet-pipeline-test'
@@ -39,6 +39,7 @@ pipeline {
         stage('Dependencies') {
             steps {
                 echo 'Installing...'
+                sh 'echo $GIT_BRANCH'
                 sh 'npm install'
             }
         }

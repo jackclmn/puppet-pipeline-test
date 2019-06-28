@@ -19,7 +19,8 @@ app.use('/api', apiRouter);
 // mongoose connection
   mongoose
   .connect(
-    'mongodb://localhost/puppet-pipeline',
+    'mongodb://gone-cheetah-mongodb/puppet-pipeline',
+    // 'mongodb://localhost/puppet-pipeline',
     { useNewUrlParser: true }
   );
 

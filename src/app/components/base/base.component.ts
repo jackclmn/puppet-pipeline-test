@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class BaseComponent implements OnInit {
   bases: any;
   displayedColumns = ['city', 'state', 'acres', 'employees', 'manager', 'contact'];
+// tslint:disable-next-line: no-use-before-declare
   dataSource = new BaseDataSource(this.api);
 
   constructor(private api: ApiService) {}

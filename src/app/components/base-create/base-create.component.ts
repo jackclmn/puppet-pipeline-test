@@ -17,13 +17,13 @@ import {
 })
 export class BaseCreateComponent implements OnInit {
   baseForm: FormGroup;
-  city: string = '';
-  state: string = '';
-  manager: string = '';
-  acres: string = '';
-  employees: string = '';
-  description: string = '';
-  contact: string = '';
+  city = '';
+  state = '';
+  manager = '';
+  acres = '';
+  employees = '';
+  description = '';
+  contact = '';
 
   constructor(
     private router: Router,
@@ -46,7 +46,7 @@ export class BaseCreateComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     this.api.postBase(form).subscribe(
       res => {
-        let id = res['_id'];
+        const id = res._id;
         this.router.navigate(['/base-details', id]);
       },
       err => {
