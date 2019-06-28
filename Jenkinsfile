@@ -88,9 +88,12 @@ pipeline {
                 // sh 'cp cluster-config ~/.kube/'
                 // sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
                 sh 'pwd'
+                sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
+                sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
+                // sh 'cp linux-amd64/helm /usr/local/bin/helm'
                 sh 'ls'
-                sh '~/cynerge/linux-amd64/helm init'
-                sh "~/cynerge/linux-amd64/helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
+                sh 'linux-amd64/helm init'
+                sh "linux-amd64/helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
             }
         }
     }
