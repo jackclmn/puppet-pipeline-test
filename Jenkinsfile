@@ -92,7 +92,7 @@ pipeline {
                 sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
                 // sh 'cp linux-amd64/helm /usr/local/bin/helm'
                 sh 'ls'
-                sh 'linux-amd64/helm init'
+                sh "linux-amd64/helm init --kubeconfig=$kubeConfig"
                 sh "linux-amd64/helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
             }
         }
