@@ -22,6 +22,8 @@ references:
       - *set_environment_variables
       - run: prepare-kubectl
       - run: prepare-awscli
+      - run: helm init --client-only
+      - run: helm repo add cynerge https://raw.githubusercontent.com/cynerge-consulting/cynerge_images/master/repo/
       - run: helm-deploy -f ${ROK8S_CONFIG}
 
 jobs:

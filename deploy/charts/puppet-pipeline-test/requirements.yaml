@@ -3,3 +3,6 @@ dependencies:
     version: 4.10.0
     repository: https://kubernetes-charts.storage.googleapis.com
     alias: mike-mongo
+  - name: metrics-server
+    version: 2.8.2
+    repository: https://raw.githubusercontent.com/cynerge-consulting/cynerge_images/master/repo/
