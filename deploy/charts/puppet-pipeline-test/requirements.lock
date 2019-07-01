@@ -1,0 +1,9 @@
+dependencies:
+- name: mongodb
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 4.10.0
+- name: metrics-server
+  repository: https://raw.githubusercontent.com/cynerge-consulting/cynerge_images/master/repo/
+  version: 2.8.2
+digest: sha256:c0121fc6b35e758f74a2ea8a8552f09ca923a7455edbca965c8af3d4100f7a82
+generated: "2019-07-01T11:52:34.004205-04:00"
