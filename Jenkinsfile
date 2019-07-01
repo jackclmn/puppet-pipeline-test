@@ -2,7 +2,11 @@ pipeline {
     environment {
         registry = "luther007/jenkins-eks-automated-feature"
         registryCredential = 'docker-hub-credentials'
+        releaseName = 'mike'
+        chartPath = '~/deploy/charts/puppet-pipeline-test'
+        valuePath = '~/deploy/feature/app.values.yml'
         dockerImage = ''
+        kubeConfig = 'cluster-config'
         AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
         AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
         PATH = "/root/bin:${env.PATH}"
@@ -39,12 +43,12 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'npm test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         echo 'Testing...'
+        //         sh 'npm test'
+        //     }
+        // }
         stage('Build') {
             steps {
                 script {
@@ -83,7 +87,14 @@ pipeline {
                 sh "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
                 sh 'printenv'
                 // sh 'cp cluster-config ~/.kube/'
-                sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
+                // sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
+                sh 'pwd'
+                sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
+                sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
+                // sh 'cp linux-amd64/helm /usr/local/bin/helm'
+                sh 'ls'
+                sh "linux-amd64/helm init --kubeconfig=$kubeConfig"
+                sh "linux-amd64/helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
             }
         }
     }
