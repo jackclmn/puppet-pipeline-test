@@ -17,14 +17,14 @@ import {
 })
 export class BaseEditComponent implements OnInit {
   baseForm: FormGroup;
-  id: string = '';
-  city: string = '';
-  state: string = '';
-  manager: string = '';
-  acres: string = '';
-  employees: string = '';
-  description: string = '';
-  contact: string = '';
+  id = '';
+  city = '';
+  state = '';
+  manager = '';
+  acres = '';
+  employees = '';
+  description = '';
+  contact = '';
 
   constructor(
     private router: Router,
@@ -34,7 +34,7 @@ export class BaseEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getBase(this.route.snapshot.params['id']);
+    this.getBase(this.route.snapshot.params.id);
     this.baseForm = this.formBuilder.group({
       city: [null, Validators.required],
       state: [null, Validators.required],
@@ -64,7 +64,7 @@ export class BaseEditComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     this.api.updateBase(this.id, form).subscribe(
       res => {
-        let id = res['_id'];
+        const id = res._id;
         this.router.navigate(['/book-details', id]);
       },
       err => {
