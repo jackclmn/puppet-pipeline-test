@@ -119,6 +119,8 @@ workflows:
             ignore: /.*/
     - deploy_production:
         # context: org-global
+        requires:
+          - imagebuild
         filters:
           branches:
             only:
