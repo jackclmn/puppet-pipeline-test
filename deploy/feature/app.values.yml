@@ -28,7 +28,7 @@ resources:
     cpu: 200m
     memory: 128Mi
   limits:
-    cpu: 300m
+    cpu: 500m
     memory: 800Mi
 
 # probePath: /
