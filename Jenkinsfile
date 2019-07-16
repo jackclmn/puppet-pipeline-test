@@ -93,7 +93,7 @@ pipeline {
                 sh 'cp linux-amd64/helm /usr/local/bin/helm'
                 sh 'whoami'
                 sh 'aws eks --region us-east-1 update-kubeconfig --name cynerge'
-                sh "helm init --kubeconfig=$kubeConfig"
+                sh "helm init"
                 sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME}"
             }
         }
