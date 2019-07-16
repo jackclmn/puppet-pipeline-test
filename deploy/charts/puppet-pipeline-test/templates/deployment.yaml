@@ -13,6 +13,12 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ include "pipeline-test-chart.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .Values.strategy.maxSurge }}
+      maxUnavailable: {{ .Values.strategy.maxUnavailable }}
+  minReadySeconds: {{ .Values.strategy.minReadySeconds }}
   template:
     metadata:
       labels:
