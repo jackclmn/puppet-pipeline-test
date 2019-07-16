@@ -1,12 +1,11 @@
 pipeline {
     environment {
-        registry = "luther007/jenkins-eks-automated-feature"
+        registry = "luther007/jenkins-eks-automated"
         registryCredential = 'docker-hub-credentials'
-        releaseName = 'mike'
-        chartPath = 'deploy/charts/puppet-pipeline-test'
+        releaseName = 'jenkins'
+        chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
         valuePath = 'deploy/feature/app.values.yml'
         dockerImage = ''
-        kubeConfig = 'cluster-config'
         AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
         AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
         PATH = "/root/bin:${env.PATH}"
