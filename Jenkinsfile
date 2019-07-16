@@ -1,9 +1,9 @@
 pipeline {
     environment {
-        registry = "luther007/jenkins-eks-automated-feature"
+        registry = "luther007/jenkins-eks-automated"
         registryCredential = 'docker-hub-credentials'
         releaseName = 'jenkins'
-        chartPath = 'deploy/charts/puppet-pipeline-test'
+        chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
         valuePath = 'deploy/feature/app.values.yml'
         dockerImage = ''
         AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
