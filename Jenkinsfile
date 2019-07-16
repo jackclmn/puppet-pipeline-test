@@ -2,7 +2,7 @@ pipeline {
     environment {
         registry = "luther007/jenkins-eks-automated-feature"
         registryCredential = 'docker-hub-credentials'
-        releaseName = 'mike'
+        releaseName = 'jenkins'
         chartPath = 'deploy/charts/puppet-pipeline-test'
         valuePath = 'deploy/feature/app.values.yml'
         dockerImage = ''
