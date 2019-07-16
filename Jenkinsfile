@@ -94,7 +94,8 @@ pipeline {
                 sh 'cp linux-amd64/helm /usr/local/bin/helm'
                 sh 'ls'
                 sh "helm init --kubeconfig=$kubeConfig"
-                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
+                sh 'aws eks --region us-east-1 update-kubeconfig --name cynerge'
+                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME}"
             }
         }
     }
