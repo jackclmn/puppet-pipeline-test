@@ -1,12 +1,11 @@
 pipeline {
     environment {
-        registry = "luther007/jenkins-eks-automated-feature"
+        registry = "luther007/jenkins-eks-automated"
         registryCredential = 'docker-hub-credentials'
-        releaseName = 'mike'
-        chartPath = 'deploy/charts/puppet-pipeline-test'
+        releaseName = 'jenkins'
+        chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
         valuePath = 'deploy/feature/app.values.yml'
         dockerImage = ''
-        kubeConfig = 'cluster-config'
         AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
         AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
         PATH = "/root/bin:${env.PATH}"
@@ -92,9 +91,10 @@ pipeline {
                 sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
                 sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
                 sh 'cp linux-amd64/helm /usr/local/bin/helm'
-                sh 'ls'
-                sh "helm init --kubeconfig=$kubeConfig"
-                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME} --kubeconfig=$kubeConfig"
+                sh 'whoami'
+                sh 'aws eks --region us-east-1 update-kubeconfig --name cynerge'
+                sh "helm init"
+                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME}"
             }
         }
     }
