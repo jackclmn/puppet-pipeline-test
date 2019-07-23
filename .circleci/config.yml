@@ -142,9 +142,14 @@ workflows:
       - pa11y_test:
           requires:
             - install-deps
+      - snyk_test:
+          requires:
+            - install-deps
       - imagebuild:
           requires:
             - unit_test
+            - pa11y_test
+            - snyk_test
           # context: org-global
           filters:
             tags:
