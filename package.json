@@ -8,13 +8,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "server": "node ./bin/www",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/cdk": "~7.3.2",
-    "@angular/cli": "~7.3.2",
+    "@angular/cli": "^7.3.2",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/compiler-cli": "~7.2.0",
@@ -31,8 +33,11 @@
     "http-errors": "^1.7.2",
     "mongoose": "^5.4.13",
     "morgan": "^1.9.1",
+    "pa11y": "~5.2.0",
+    "pa11y-ci": "^2.3.0",
     "rxjs": "~6.3.3",
     "serve-favicon": "^2.5.0",
+    "snyk": "^1.198.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
@@ -57,5 +62,6 @@
     "ts-node": "^7.0.1",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  }
+  },
+  "snyk": true
 }

@@ -1,0 +1,11 @@
+{
+    "defaults": {
+        "wait": 5000,
+        "standard": "Section508"
+    },
+
+    "urls": [
+        "http://pa11y.org/",
+        "http://pa11y.org/contributing"
+    ]
+}
