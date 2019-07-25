@@ -75,9 +75,6 @@ jobs:
       - <<: *restore_git
       - <<: *restore_deps
       - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
           name: Lint
           command: npm run lint
       - run:
@@ -91,7 +88,7 @@ jobs:
       - <<: *restore_deps
       - run:
           name: Test Pa11y
-          command: pa11y-ci
+          command: npm run pa11y
   snyk_test:
     docker:
       - image: luther007/cynerge_images:latest
