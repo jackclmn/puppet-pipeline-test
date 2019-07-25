@@ -22,7 +22,7 @@ references:
     steps:
       - checkout
       - *set_environment_variables
-      - run: aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name cynerge
+      - run: aws eks --region ${AWS_DEFAULT_REGION} update-kubeconfig --name ${cluster_name}
       # - run: prepare-kubectl
       - run: prepare-awscli
       - run: helm init --client-only
