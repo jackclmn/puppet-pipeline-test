@@ -23,7 +23,8 @@ artifacts:
     - app.js
     - index.html
     - package.json
-    - node_modules
+    - node_modules/*
+    - routes/*
     - # ... any other output files
 cache:
   paths:
