@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10  
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - echo Running Lint Tests
+      - npm run lint
+      - echo Running Unit Tests
+      - npm test
+  build:
+    commands:
+      - # Build command 1
+      - # Build command 2
+      - # ...
+
+artifacts:
+  files:
+    - app.js
+    - index.html
+    - package.json
+    - node_modules
+    - # ... any other output files
+cache:
+  paths:
+    - node_modules
