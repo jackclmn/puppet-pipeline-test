@@ -20,12 +20,13 @@ phases:
 
 artifacts:
   files:
-    - app.js
-    - index.html
-    - package.json
-    - node_modules/*
-    - routes/*
-    - models/*
+    - '**/*'
+    # - app.js
+    # - index.html
+    # - package.json
+    # - node_modules/*
+    # - routes/*
+    # - models/*
     - # ... any other output files
 cache:
   paths:
