@@ -2,6 +2,10 @@ version: 0.2
 
 run-as: root
 
+env:
+  variables:
+    SNYK_TOKEN: "9cf39ef7-054d-484b-9161-e23a5d5f268c"
+
 phases:
   install:
     runtime-versions:
