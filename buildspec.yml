@@ -12,8 +12,8 @@ phases:
       - npm run lint
       - echo Running Unit Tests
       - npm test
-      - echo Running E2E Tests
-      - npm run e2e
+      # - echo Running E2E Tests
+      # - npm run e2e
       - echo Running Vulnerability Tests
       - npm run snyk
       - echo Running 508 Compliance Tests
