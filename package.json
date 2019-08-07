@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "server": "node ./bin/www",
     "e2e": "ng e2e",
-    "snyk": "snyk test",
+    "snyk-protect": "snyk protect",
+    "snyk-test": "snyk test",
     "pa11y": "./node_modules/pa11y-ci/bin/pa11y-ci.js",
     "pa11y-build": "./scripts/build-pa11y.sh",
     "static": "./node_modules/superstatic/bin/server dist/ -c ./development-configurations/superstatic.json --port 4200"

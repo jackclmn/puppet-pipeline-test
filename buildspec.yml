@@ -15,7 +15,8 @@ phases:
       # - echo Running E2E Tests
       # - npm run e2e
       - echo Running Vulnerability Tests
-      - npm run snyk
+      - npm run snyk-protect
+      - npm run snyk-test
       - echo Running 508 Compliance Tests
       - npm run pa11y-build
 
