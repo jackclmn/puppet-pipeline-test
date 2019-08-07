@@ -10,7 +10,7 @@ describe('Puppet App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to puppet pipelines test');
+    expect(page.getTitleText()).toEqual('Welcome to automated pipelines test');
   });
 
   afterEach(async () => {

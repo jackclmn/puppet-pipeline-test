@@ -1,0 +1,818 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-LODASH-450202:
+    - '@angular/cli > inquirer > lodash':
+        reason: None given
+        expires: '2019-09-05T21:07:51.206Z'
+    - mongoose > async > lodash:
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - snyk > @snyk/dep-graph > lodash:
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        reason: None given
+        expires: '2019-09-05T21:07:51.223Z'
+  SNYK-JS-MIXINDEEP-450212:
+    - '@angular/cli > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.206Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.207Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.208Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.209Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.210Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.211Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/compiler-cli > chokidar > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > braces > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > mixin-deep':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+  SNYK-JS-SETVALUE-450213:
+    - '@angular/cli > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.212Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.213Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.214Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.218Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.219Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.220Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @angular-devkit/architect > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/angular > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/cli > @schematics/update > @angular-devkit/schematics > @angular-devkit/core > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.221Z'
+    - '@angular/compiler-cli > chokidar > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > braces > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > nanomatch > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > anymatch > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+    - '@angular/compiler-cli > chokidar > readdirp > micromatch > extglob > expand-brackets > snapdragon > base > cache-base > union-value > set-value':
+        reason: None given
+        expires: '2019-09-05T21:07:51.222Z'
+patch: {}

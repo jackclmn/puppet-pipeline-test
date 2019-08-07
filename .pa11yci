@@ -1,0 +1,12 @@
+{
+    "defaults": {
+        "wait": 1000,
+        "timeout": 20000,
+        "standard": "Section508"
+    },
+
+    "urls": [
+        "http://localhost:4200",
+        "http://localhost:4200/bases"
+    ]
+}
