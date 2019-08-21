@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "server": "node ./bin/www",
     "e2e": "ng e2e",
-    "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
   "private": true,
