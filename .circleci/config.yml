@@ -13,14 +13,14 @@ references:
   restore_deps: &restore_deps
     restore_cache:
       keys:
-        - v1-dependencies-{{ checksum "package.json" }}
-        - v1-dependencies-
+        - v2-dependencies-{{ checksum "package.json" }}
+        - v2-dependencies-
 
   restore_git: &restore_git
     restore_cache:
       keys:
-        - v1-cynerge-repo-{{ .Environment.CIRCLE_SHA1 }}
-        - v1-cynerge-repo-
+        - v2-cynerge-repo-{{ .Environment.CIRCLE_SHA1 }}
+        - v2-cynerge-repo-
 
 jobs:
   checkout-code:
@@ -31,7 +31,7 @@ jobs:
       - save_cache:
           paths:
             - ./
-          key: v1-cynerge-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v2-cynerge-repo-{{ .Environment.CIRCLE_SHA1 }}
 
   install-deps:
     docker:
@@ -45,7 +45,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v2-dependencies-{{ checksum "package.json" }}
   # lint:
   #   docker:
   #     - image: circleci/node:7.10
