@@ -3,7 +3,7 @@ branch-defaults:
     environment: $CIRCLE_BRANCH
 global:
   application_name: mike-v2-demo
-  default_ec2_keyname:
+  default_ec2_keyname: AWS EC2
   default_platform: 64bit Amazon Linux 2018.03 v4.9.2 running Node.js
   default_region: us-east-1
   sc: git
