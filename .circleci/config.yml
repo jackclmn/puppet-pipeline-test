@@ -109,11 +109,16 @@ workflows:
       - terraform:
           requires:
             - install-deps
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
+          #       - staging
       - deploy:
           requires:
             - terraform
-          filters:
-            branches:
-              only:
-                - master
-                - staging
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
+          #       - staging
