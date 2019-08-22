@@ -20,7 +20,8 @@ app.use('/api', apiRouter);
   mongoose
   .connect(
     // 'mongodb://mike-mike-mongo/puppet-pipeline',
-    'mongodb://localhost/puppet-pipeline',
+    // 'mongodb://localhost/puppet-pipeline',
+    'mongodb+srv://root:Passwordforme@cluster0-kezik.mongodb.net/test?retryWrites=true&w=majority',
     { useNewUrlParser: true }
   );
 
