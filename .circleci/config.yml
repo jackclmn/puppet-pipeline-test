@@ -74,6 +74,8 @@ jobs:
       - image: luther007/cynerge_images:latest
     steps:
       - checkout
+      - <<: *restore_git
+      - <<: *restore_deps
       - run:
           name: AWS Dep 
           command: |
