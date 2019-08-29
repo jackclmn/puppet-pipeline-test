@@ -71,10 +71,9 @@ jobs:
   deploy:
     # working_directory: ~/app
     docker:
-      # - image: luther007/cynerge_images:latest
-      - image: circleci/node:7.10
+      - image: luther007/cynerge_images:latest
     steps:
-      - <<: *restore_git
+      - checkout
       - <<: *restore_deps
       - run:
           name: AWS Dep 
