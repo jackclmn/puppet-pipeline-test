@@ -69,11 +69,10 @@ jobs:
           command: cd terraform/ && terraform apply -auto-approve
 
   deploy:
-    working_directory: ~/app
+    # working_directory: ~/app
     docker:
       - image: luther007/cynerge_images:latest
     steps:
-      - checkout
       - <<: *restore_git
       - <<: *restore_deps
       - run:
