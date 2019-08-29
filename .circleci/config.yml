@@ -74,7 +74,9 @@ jobs:
       - image: luther007/cynerge_images:latest
     steps:
       - checkout
-      - <<: *restore_deps
+      - run:
+          name: Install Dependencies
+          command: npm install
       - run:
           name: AWS Dep 
           command: |
