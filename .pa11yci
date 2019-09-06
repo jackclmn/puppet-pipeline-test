@@ -5,7 +5,7 @@
     },
 
     "urls": [
-        "http://pa11y.org/",
-        "http://pa11y.org/contributing"
+        "http://localhost:4200",
+        "http://localhost:4200/bases"
     ]
 }

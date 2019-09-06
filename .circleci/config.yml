@@ -1,4 +1,7 @@
-version: 2
+version: 2.1
+
+orbs:
+  snyk: snyk/snyk@0.0.8
 
 references:
   set_environment_variables: &set_environment_variables
@@ -46,15 +49,34 @@ jobs:
           paths:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
-  # lint:
-  #   docker:
-  #     - image: circleci/node:7.10
-  #   steps:
-  #     - <<: *restore_git
-  #     - <<: *restore_deps
-  #     - run:
-  #         name: Lint
-  #         command: npm run lint
+  unit_test:
+    docker:
+      - image: luther007/cynerge_images:latest
+    steps:
+      - <<: *restore_git
+      - <<: *restore_deps
+      - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Unit Test
+          command: npm test
+  pa11y_test:
+    docker:
+      - image: luther007/cynerge_images:latest
+    steps:
+      - <<: *restore_git
+      - <<: *restore_deps
+      - run:
+          name: Test Pa11y
+          command: npm run build-pa11y
+  snyk_test:
+    docker:
+      - image: luther007/cynerge_images:latest
+    steps:
+      - <<: *restore_git
+      - <<: *restore_deps
+      - snyk/scan
   terraform:
     docker:
       - image: luther007/cynerge_images:latest

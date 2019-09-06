@@ -8,6 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "server": "node ./bin/www",
+    "serve-static-files": "./node_modules/superstatic/bin/server dist/ -c ./development-configurations/superstatic.json --port 4200",
+    "pa11y": "./node_modules/pa11y-ci/bin/pa11y-ci.js",
+    "build-pa11y": "./test_scripts/pa11y.sh",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -36,6 +39,7 @@
     "puppeteer": "^1.19.0",
     "rxjs": "~6.3.3",
     "serve-favicon": "^2.5.0",
+    "superstatic": "^6.0.4",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
