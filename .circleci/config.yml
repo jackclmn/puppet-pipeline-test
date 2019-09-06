@@ -25,7 +25,7 @@ references:
 jobs:
   checkout-code:
     docker:
-      - image: circleci/node:7.10
+      - image: luther007/cynerge_images:latest
     steps:
       - checkout
       - save_cache:
@@ -35,7 +35,7 @@ jobs:
 
   install-deps:
     docker:
-      - image: circleci/node:7.10
+      - image: luther007/cynerge_images:latest
     steps:
       - <<: *restore_git
       - <<: *restore_deps
@@ -73,10 +73,12 @@ jobs:
     docker:
       - image: luther007/cynerge_images:latest
     steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: npm install
+      # - checkout
+      # - run:
+      #     name: Install Dependencies
+      #     command: npm install
+      - <<: *restore_git
+      - <<: *restore_deps
       - run:
           name: AWS Dep 
           command: |
@@ -84,9 +86,6 @@ jobs:
             sudo apt-get -y install python-pip python-dev build-essential
             sudo yes | pip install --upgrade setuptools
             sudo yes | pip install awsebcli --upgrade
-      # - run:
-      #     name: Init EB
-      #     command: eb init
       - run:
           name: Environment
           command: printenv
