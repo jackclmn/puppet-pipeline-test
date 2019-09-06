@@ -127,12 +127,21 @@ workflows:
       - install-deps:
           requires:
             - checkout-code
-      # - lint:
-      #     requires:
-      #       - install-deps
+      - unit_test:
+          requires:
+            - install-deps
+      - pa11y_test:
+          requires:
+            - install-deps
+      - snyk_test:
+          requires:
+            - install-deps
       - terraform:
           requires:
             - install-deps
+            - unit_test
+            - pa11y_test
+            - snyk_test
           # filters:
           #   branches:
           #     only:
