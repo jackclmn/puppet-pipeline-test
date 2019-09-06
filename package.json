@@ -20,7 +20,7 @@
     "@angular/cli": "^7.3.2",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
-    "@angular/compiler-cli": "~7.2.0",
+    "@angular/compiler-cli": "^8.0.0",
     "@angular/core": "~7.2.0",
     "@angular/forms": "~7.2.0",
     "@angular/material": "^7.3.2",
@@ -39,6 +39,7 @@
     "puppeteer": "^1.19.0",
     "rxjs": "~6.3.3",
     "serve-favicon": "^2.5.0",
+    "snyk": "^1.226.0",
     "superstatic": "^6.0.4",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
