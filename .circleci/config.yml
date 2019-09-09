@@ -16,8 +16,8 @@ references:
   restore_deps: &restore_deps
     restore_cache:
       keys:
-        - v2-dependencies-{{ checksum "package.json" }}
-        - v2-dependencies-
+        - v2-web-npm-deps-{{ checksum "package.json" }}
+        - v2-web-npm-deps-
 
   restore_git: &restore_git
     restore_cache:
@@ -44,11 +44,15 @@ jobs:
       - <<: *restore_deps
       - run:
           name: Install Dependencies
-          command: npm install
+          command: npm ci
       - save_cache:
+          key: v2-web-npm-deps-{{ .Branch }}-{{ checksum "/root/project/web/package-lock.json" }}
           paths:
-            - node_modules
-          key: v2-dependencies-{{ checksum "package.json" }}
+            - /root/.npm
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v2-dependencies-{{ checksum "package.json" }}
   unit_test:
     docker:
       - image: luther007/cynerge_images:latest
