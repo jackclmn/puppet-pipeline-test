@@ -46,7 +46,7 @@ jobs:
           name: Install Dependencies
           command: npm ci
       - save_cache:
-          key: v2-web-npm-deps-{{ .Branch }}-{{ checksum "/root/project/web/package-lock.json" }}
+          key: v2-web-npm-deps-{{ checksum "package-lock.json" }}
           paths:
             - /root/.npm
       # - save_cache:
