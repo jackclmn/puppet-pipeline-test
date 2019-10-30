@@ -11,7 +11,8 @@
     "serve-static-files": "./node_modules/superstatic/bin/server dist/ -c ./development-configurations/superstatic.json --port 4200",
     "pa11y": "./node_modules/pa11y-ci/bin/pa11y-ci.js",
     "build-pa11y": "./test_scripts/pa11y.sh",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "private": true,
   "dependencies": {
