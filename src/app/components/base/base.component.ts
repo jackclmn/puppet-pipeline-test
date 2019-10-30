@@ -1,17 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { DataSource } from '@angular/cdk/collections';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from "@angular/core";
+import { ApiService } from "../../services/api.service";
+import { DataSource } from "@angular/cdk/collections";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-base',
-  templateUrl: './base.component.html',
-  styleUrls: ['./base.component.css']
+  selector: "app-base",
+  templateUrl: "./base.component.html",
+  styleUrls: ["./base.component.css"]
 })
 export class BaseComponent implements OnInit {
   bases: any;
-  displayedColumns = ['city', 'state', 'acres', 'employees', 'manager', 'contact'];
-// tslint:disable-next-line: no-use-before-declare
+  displayedColumns = [
+    "city",
+    "state",
+    "acres",
+    "employees",
+    "manager",
+    "contact"
+  ];
+  // tslint:disable-next-line: no-use-before-declare
   dataSource = new BaseDataSource(this.api);
 
   constructor(private api: ApiService) {}

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute } from "@angular/router";
+import { ApiService } from "../../services/api.service";
 import {
   FormControl,
   FormGroupDirective,
@@ -8,23 +8,23 @@ import {
   FormGroup,
   NgForm,
   Validators
-} from '@angular/forms';
+} from "@angular/forms";
 
 @Component({
-  selector: 'app-base-edit',
-  templateUrl: './base-edit.component.html',
-  styleUrls: ['./base-edit.component.css']
+  selector: "app-base-edit",
+  templateUrl: "./base-edit.component.html",
+  styleUrls: ["./base-edit.component.css"]
 })
 export class BaseEditComponent implements OnInit {
   baseForm: FormGroup;
-  id = '';
-  city = '';
-  state = '';
-  manager = '';
-  acres = '';
-  employees = '';
-  description = '';
-  contact = '';
+  id = "";
+  city = "";
+  state = "";
+  manager = "";
+  acres = "";
+  employees = "";
+  description = "";
+  contact = "";
 
   constructor(
     private router: Router,
@@ -65,7 +65,7 @@ export class BaseEditComponent implements OnInit {
     this.api.updateBase(this.id, form).subscribe(
       res => {
         const id = res._id;
-        this.router.navigate(['/book-details', id]);
+        this.router.navigate(["/book-details", id]);
       },
       err => {
         console.log(err);
@@ -74,6 +74,6 @@ export class BaseEditComponent implements OnInit {
   }
 
   bookDetails() {
-    this.router.navigate(['/base-details', this.id]);
+    this.router.navigate(["/base-details", this.id]);
   }
 }

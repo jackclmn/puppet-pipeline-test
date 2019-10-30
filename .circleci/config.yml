@@ -153,8 +153,8 @@ workflows:
       - deploy:
           requires:
             - terraform
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
-          #       - staging
+          filters:
+            branches:
+              only:
+                - master
+                - staging

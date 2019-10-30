@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BaseComponent } from './components/base/base.component';
-import { BaseEditComponent } from './components/base-edit/base-edit.component';
-import { BaseDetailComponent } from './components/base-detail/base-detail.component';
-import { BaseCreateComponent } from './components/base-create/base-create.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BaseComponent } from "./components/base/base.component";
+import { BaseEditComponent } from "./components/base-edit/base-edit.component";
+import { BaseDetailComponent } from "./components/base-detail/base-detail.component";
+import { BaseCreateComponent } from "./components/base-create/base-create.component";
+import { RouterModule, Routes } from "@angular/router";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatInputModule,
   MatToolbarModule,
@@ -22,35 +22,34 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule
-} from '@angular/material';
-import 'hammerjs';
-
+} from "@angular/material";
+import "hammerjs";
 
 const appRoutes: Routes = [
   {
-    path: 'bases',
+    path: "bases",
     component: BaseComponent,
-    data: { title: 'FS Base List' }
+    data: { title: "FS Base List" }
   },
   {
-    path: 'base-details/:id',
+    path: "base-details/:id",
     component: BaseDetailComponent,
-    data: { title: 'Base Details' }
+    data: { title: "Base Details" }
   },
   {
-    path: 'base-create',
+    path: "base-create",
     component: BaseCreateComponent,
-    data: { title: 'Add New Base' }
+    data: { title: "Add New Base" }
   },
   {
-    path: 'base-edit/:id',
+    path: "base-edit/:id",
     component: BaseEditComponent,
-    data: { title: 'Edit Base' }
+    data: { title: "Edit Base" }
   },
   {
-    path: '',
-    redirectTo: '/bases',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "/bases",
+    pathMatch: "full"
   }
 ];
 

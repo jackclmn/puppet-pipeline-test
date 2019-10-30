@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { ApiService } from "../../services/api.service";
 import {
   FormControl,
   FormGroupDirective,
@@ -8,22 +8,22 @@ import {
   FormGroup,
   NgForm,
   Validators
-} from '@angular/forms';
+} from "@angular/forms";
 
 @Component({
-  selector: 'app-base-create',
-  templateUrl: './base-create.component.html',
-  styleUrls: ['./base-create.component.css']
+  selector: "app-base-create",
+  templateUrl: "./base-create.component.html",
+  styleUrls: ["./base-create.component.css"]
 })
 export class BaseCreateComponent implements OnInit {
   baseForm: FormGroup;
-  city = '';
-  state = '';
-  manager = '';
-  acres = '';
-  employees = '';
-  description = '';
-  contact = '';
+  city = "";
+  state = "";
+  manager = "";
+  acres = "";
+  employees = "";
+  description = "";
+  contact = "";
 
   constructor(
     private router: Router,
@@ -47,7 +47,7 @@ export class BaseCreateComponent implements OnInit {
     this.api.postBase(form).subscribe(
       res => {
         const id = res._id;
-        this.router.navigate(['/base-details', id]);
+        this.router.navigate(["/base-details", id]);
       },
       err => {
         console.log(err);

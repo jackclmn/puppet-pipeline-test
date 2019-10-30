@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ApiService } from "../../services/api.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-base-detail',
-  templateUrl: './base-detail.component.html',
-  styleUrls: ['./base-detail.component.css']
+  selector: "app-base-detail",
+  templateUrl: "./base-detail.component.html",
+  styleUrls: ["./base-detail.component.css"]
 })
 export class BaseDetailComponent implements OnInit {
   base = {};
@@ -27,7 +27,7 @@ export class BaseDetailComponent implements OnInit {
   deleteBase(id) {
     this.api.deleteBase(id).subscribe(
       res => {
-        this.router.navigate(['/bases']);
+        this.router.navigate(["/bases"]);
       },
       err => {
         console.log(err);
