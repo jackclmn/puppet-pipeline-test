@@ -61,6 +61,8 @@ jobs:
       - run:
           name: Unit Test
           command: npm test
+      - store_test_results:
+          path: test-results/unit
   pa11y_test:
     docker:
       - image: luther007/cynerge_images:latest
@@ -76,7 +78,8 @@ jobs:
     steps:
       - <<: *restore_git
       - <<: *restore_deps
-      - snyk/scan
+      - snyk/scan:
+          fail-on-issues: false
   terraform:
     docker:
       - image: luther007/cynerge_images:latest
