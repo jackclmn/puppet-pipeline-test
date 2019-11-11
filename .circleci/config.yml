@@ -57,7 +57,7 @@ jobs:
       - <<: *restore_deps
       - run:
           name: Lint
-          command: npm run lint
+          command: npm run lint --force=true
       - run:
           name: Unit Test
           command: npm test
@@ -121,6 +121,18 @@ jobs:
       - run:
           name: Environment URL
           command: aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text
+  post-deploy:
+    docker:
+      - image: luther007/cynerge_images:latest
+    steps:
+      - <<: *restore_git
+      - <<: *restore_deps
+      - *set_environment_variables
+      - run:
+          name: Vulnerability Scan
+          command: |
+            if [[ -z "${DEPLOY_ENV}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
+            --start-options '-config api.disablekey=true' https://google.com
 
 workflows:
   version: 2
@@ -158,3 +170,6 @@ workflows:
               only:
                 - master
                 - staging
+      - post-deploy
+          # requires:
+          #   - deploy
