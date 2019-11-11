@@ -132,7 +132,7 @@ jobs:
           name: Vulnerability Scan
           command: |
             if [[ -z "${DEPLOY_ENV}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
-            --start-options '-config api.disablekey=true' https://google.com
+            --start-options '-config api.disablekey=true' https://google.com; fi
 
 workflows:
   version: 2
