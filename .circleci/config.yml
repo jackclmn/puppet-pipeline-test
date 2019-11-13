@@ -116,7 +116,7 @@ jobs:
           command: eb deploy $CIRCLE_BRANCH
       - run:
           name: Environment Var
-          command: export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text) && echo 'export SITE_URL=$SITE_URL' >> ${BASH_ENV}
+          command: echo 'export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text)' >> $BASH_ENV
       - run:
           name: Environment URL
           command: printenv SITE_URL
@@ -124,7 +124,7 @@ jobs:
           name: Vulnerability Scan
           command: |
             if [[ -z "${SITE_URL}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
-            --start-options '-config api.disablekey=true' $SITE_URL; fi
+            --start-options '-config api.disablekey=true' http://$SITE_URL; fi
 
 workflows:
   version: 2
