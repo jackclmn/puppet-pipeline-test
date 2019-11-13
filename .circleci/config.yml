@@ -116,7 +116,7 @@ jobs:
           command: eb deploy $CIRCLE_BRANCH
       - run:
           name: Environment Var
-          command: export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text)
+          command: export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text) && echo 'export SITE_URL=$SITE_URL' >> ${BASH_ENV}
       - run:
           name: Environment URL
           command: printenv SITE_URL
