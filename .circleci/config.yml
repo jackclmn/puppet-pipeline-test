@@ -112,27 +112,19 @@ jobs:
             sudo yes | pip install --upgrade setuptools
             sudo yes | pip install awsebcli --upgrade
       - run:
-          name: Environment
-          command: printenv
-
-      - run:
           name: Deploying
           command: eb deploy $CIRCLE_BRANCH
       - run:
+          name: Environment Var
+          command: export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text)
+      - run:
           name: Environment URL
-          command: aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text
-  post-deploy:
-    docker:
-      - image: luther007/cynerge_images:latest
-    steps:
-      - <<: *restore_git
-      - <<: *restore_deps
-      - *set_environment_variables
+          command: printenv SITE_URL
       - run:
           name: Vulnerability Scan
           command: |
-            if [[ -z "${DEPLOY_ENV}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
-            --start-options '-config api.disablekey=true' https://google.com; fi
+            if [[ -z "${SITE_URL}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
+            --start-options '-config api.disablekey=true' $SITE_URL; fi
 
 workflows:
   version: 2
@@ -165,11 +157,8 @@ workflows:
       - deploy:
           requires:
             - terraform
-          filters:
-            branches:
-              only:
-                - master
-                - staging
-      - post-deploy
-          # requires:
-          #   - deploy
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
+          #       - staging
