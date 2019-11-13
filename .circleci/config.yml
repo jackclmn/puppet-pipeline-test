@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   snyk: snyk/snyk@0.0.8
+  slack: circleci/slack@3.4.1
 
 references:
   set_environment_variables: &set_environment_variables
@@ -92,6 +93,12 @@ jobs:
       - run:
           name: Apply
           command: cd terraform/ && terraform apply -auto-approve
+      - slack/notify:
+          channel: circleci-builds
+          url: 'https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}'
+          message: 'This is a test ${CIRCLE_BRANCH}'
+          webhook: '${SLACK_WEBHOOK}'
+
 
   deploy:
     # working_directory: ~/app
@@ -104,8 +111,6 @@ jobs:
       #     command: npm install
       - <<: *restore_git
       - <<: *restore_deps
-      - setup_remote_docker:
-          docker_layer_caching: false
       - run:
           name: AWS Dep 
           command: |
@@ -116,12 +121,18 @@ jobs:
       - run:
           name: Deploying
           command: eb deploy $CIRCLE_BRANCH
+  post-deploy:
+    docker:
+      - image: luther007/cynerge_images:latest
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: false
+      - run:
+          name: Environment URL
+          command: aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text
       - run:
           name: Environment Var
           command: echo 'export SITE_URL=$(aws elasticbeanstalk describe-environments --environment-names $CIRCLE_BRANCH --query "Environments[*].CNAME" --output text)' >> $BASH_ENV
-      - run:
-          name: Environment URL
-          command: printenv SITE_URL
       - run:
           name: Vulnerability Scan
           command: |
@@ -159,8 +170,11 @@ workflows:
       - deploy:
           requires:
             - terraform
-          # filters:
-          #   branches:
-          #     only:
-          #       - master
-          #       - staging
+          filters:
+            branches:
+              only:
+                - master
+                - staging
+      - post-deploy:
+          requires:
+            - deploy
