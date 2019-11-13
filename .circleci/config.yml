@@ -93,13 +93,6 @@ jobs:
       - run:
           name: Apply
           command: cd terraform/ && terraform apply -auto-approve
-      - slack/notify:
-          channel: circleci-builds
-          message: 'This is a test ${CIRCLE_BRANCH}'
-          webhook: '${SLACK_WEBHOOK}'
-      - slack/status:
-          webhook: '${SLACK_WEBHOOK}'
-
 
   deploy:
     # working_directory: ~/app
@@ -122,6 +115,10 @@ jobs:
       - run:
           name: Deploying
           command: eb deploy $CIRCLE_BRANCH
+      - slack/status:
+          webhook: '${SLACK_WEBHOOK}'
+          success_message: ':tada: A $CIRCLE_JOB job has succeeded! Verify Lint, Accessibility, Dependency and Post-Deploy tests before merging into Production. '
+
   post-deploy:
     docker:
       - image: luther007/cynerge_images:latest
@@ -171,11 +168,11 @@ workflows:
       - deploy:
           requires:
             - terraform
-          filters:
-            branches:
-              only:
-                - master
-                - staging
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
+          #       - staging
       - post-deploy:
           requires:
             - deploy
