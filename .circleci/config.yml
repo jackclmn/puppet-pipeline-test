@@ -104,6 +104,8 @@ jobs:
       #     command: npm install
       - <<: *restore_git
       - <<: *restore_deps
+      - setup_remote_docker:
+          docker_layer_caching: false
       - run:
           name: AWS Dep 
           command: |
