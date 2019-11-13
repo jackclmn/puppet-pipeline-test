@@ -123,7 +123,7 @@ jobs:
       - run:
           name: Vulnerability Scan
           command: |
-            if [[ -z "${SITE_URL}" ]]; then echo No site URL found. Skipping test...; else /usr/local/bin/docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
+            if [[ -z "${SITE_URL}" ]]; then echo No site URL found. Skipping test...; else docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained \
             --start-options '-config api.disablekey=true' http://$SITE_URL; fi
 
 workflows:
