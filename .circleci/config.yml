@@ -95,8 +95,9 @@ jobs:
           command: cd terraform/ && terraform apply -auto-approve
       - slack/notify:
           channel: circleci-builds
-          url: 'https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}'
           message: 'This is a test ${CIRCLE_BRANCH}'
+          webhook: '${SLACK_WEBHOOK}'
+      - slack/status:
           webhook: '${SLACK_WEBHOOK}'
 
 
