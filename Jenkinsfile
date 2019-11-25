@@ -44,9 +44,8 @@ pipeline {
         }
         stage('Sonarqube Analysis') {
             steps {
-                def scannerHome = tool 'SonarScanner 4.2.0';
                 withSonarQubeEnv(installationName: 'AWS-Sonarqube')
-                sh "${scannerHome}/bin/sonar-scanner"
+                sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
             }
         }
         stage('Pa11y') {
