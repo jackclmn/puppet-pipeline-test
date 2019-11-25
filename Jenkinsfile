@@ -44,8 +44,9 @@ pipeline {
         }
         stage('Sonarqube Analysis') {
             steps {
-                withSonarQubeEnv('AWS-Sonarqube')
-                sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
+                withSonarQubeEnv(installationName: 'AWS-Sonarqube') {
+                    sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
+                }
             }
         }
         stage('Pa11y') {
