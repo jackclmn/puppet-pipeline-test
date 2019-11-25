@@ -1,15 +1,15 @@
 pipeline {
-    environment {
-        registry = "luther007/jenkins-eks-automated"
-        registryCredential = 'docker-hub-credentials'
-        releaseName = 'jenkins'
-        chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
-        valuePath = 'deploy/feature/app.values.yml'
-        dockerImage = ''
-        AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
-        AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
-        PATH = "/root/bin:${env.PATH}"
-    }
+    // environment {
+    //     registry = "luther007/jenkins-eks-automated"
+    //     registryCredential = 'docker-hub-credentials'
+    //     releaseName = 'jenkins'
+    //     chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
+    //     valuePath = 'deploy/feature/app.values.yml'
+    //     dockerImage = ''
+    //     AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
+    //     AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
+    //     PATH = "/root/bin:${env.PATH}"
+    // }
 
     agent {
         docker {
@@ -42,67 +42,75 @@ pipeline {
                 sh 'npm install'
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         echo 'Testing...'
-        //         sh 'npm test'
-        //     }
-        // }
-        stage('Build') {
-            steps {
-                script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
-            }
+        stage('Sonarqube Analysis') {
+            def scannerHome = tool 'SonarScanner 4.2.0';
+            withSonarQubeEnv(installationName: 'AWS-Sonarqube')
+            sh "${scannerHome}/bin/sonar-scanner"
         }
-        stage('Deploy') {
-            steps {
-                script {
-                    docker.withRegistry( '', registryCredential ) {
-                    dockerImage.push()
-                    dockerImage.push('latest')
-                    }
-                }
-            }
+        stage('Pa11y') {
+            sh 'npm run build-pa11y'
         }
-        stage('Remove Unused docker image') {
-            steps{
-                sh "docker rmi $registry:$BUILD_NUMBER"
-            }
-        }
-        stage('Deploy Kube') {
-            steps {
-                // sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -'
-                // sh 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list'
-                // sh 'apt-get update'
-                // sh 'apt-get install -y kubectl'
-                // sh 'kubectl config --kubeconfig=cluster-config use-context ljoliff@cynerge-cluster-6.us-east-1.eksctl.io'
-                // sh 'export KUBECONFIG=$KUBECONFIG:cluster-config'
-                // sh 'curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator'
-                // sh 'chmod +x ./aws-iam-authenticator'
-                // sh 'mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH && cp ./aws-iam-authenticator /usr/bin/aws-iam-authenticator'
-                // sh 'echo export PATH=$HOME/bin:$PATH >> ~/.bashrc'
-                sh "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
-                sh "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
-                sh 'printenv'
-                // sh 'cp cluster-config ~/.kube/'
-                // sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
-                sh 'pwd'
-                sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
-                sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
-                sh 'cp linux-amd64/helm /usr/local/bin/helm'
-                sh 'ls'
-                sh "helm init --kubeconfig=$kubeConfig"
-                sh 'aws eks --region us-east-1 update-kubeconfig --name cynerge'
-                sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME}"
-            }
+        //  Pretend this is a Deploy step
+        stage('Lighthouse') {
+            sh 'npm install -g lighthouse-batch'
+            sh 'lighthouse-batch -s https://www.google.com,https://www.cynerge.com'
         }
     }
-    post { 
-        always { 
-            cleanWs()
-        }
-    }
+    //     stage('Build') {
+    //         steps {
+    //             script {
+    //                 dockerImage = docker.build registry + ":$BUILD_NUMBER"
+    //             }
+    //         }
+    //     }
+    //     stage('Deploy') {
+    //         steps {
+    //             script {
+    //                 docker.withRegistry( '', registryCredential ) {
+    //                 dockerImage.push()
+    //                 dockerImage.push('latest')
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     stage('Remove Unused docker image') {
+    //         steps{
+    //             sh "docker rmi $registry:$BUILD_NUMBER"
+    //         }
+    //     }
+    //     stage('Deploy Kube') {
+    //         steps {
+    //             // sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -'
+    //             // sh 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list'
+    //             // sh 'apt-get update'
+    //             // sh 'apt-get install -y kubectl'
+    //             // sh 'kubectl config --kubeconfig=cluster-config use-context ljoliff@cynerge-cluster-6.us-east-1.eksctl.io'
+    //             // sh 'export KUBECONFIG=$KUBECONFIG:cluster-config'
+    //             // sh 'curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.12.7/2019-03-27/bin/linux/amd64/aws-iam-authenticator'
+    //             // sh 'chmod +x ./aws-iam-authenticator'
+    //             // sh 'mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH && cp ./aws-iam-authenticator /usr/bin/aws-iam-authenticator'
+    //             // sh 'echo export PATH=$HOME/bin:$PATH >> ~/.bashrc'
+    //             sh "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
+    //             sh "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
+    //             sh 'printenv'
+    //             // sh 'cp cluster-config ~/.kube/'
+    //             // sh "kubectl set image deployment/jenkins-eks-automated mike1=luther007/jenkins-eks-automated-feature:$BUILD_NUMBER --namespace=feature --kubeconfig=cluster-config"
+    //             sh 'pwd'
+    //             sh 'curl -O https://get.helm.sh/helm-v2.14.1-linux-amd64.tar.gz'
+    //             sh 'tar -zxvf helm-v2.14.1-linux-amd64.tar.gz'
+    //             sh 'cp linux-amd64/helm /usr/local/bin/helm'
+    //             sh 'ls'
+    //             sh "helm init --kubeconfig=$kubeConfig"
+    //             sh 'aws eks --region us-east-1 update-kubeconfig --name cynerge'
+    //             sh "helm upgrade --install $releaseName $chartPath -f $valuePath --namespace=${env.BRANCH_NAME}"
+    //         }
+    //     }
+    // }
+    // post { 
+    //     always { 
+    //         cleanWs()
+    //     }
+    // }
 }
 
 // node {
