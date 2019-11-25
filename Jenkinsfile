@@ -43,17 +43,23 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-            def scannerHome = tool 'SonarScanner 4.2.0';
-            withSonarQubeEnv(installationName: 'AWS-Sonarqube')
-            sh "${scannerHome}/bin/sonar-scanner"
+            steps {
+                def scannerHome = tool 'SonarScanner 4.2.0';
+                withSonarQubeEnv(installationName: 'AWS-Sonarqube')
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
         }
         stage('Pa11y') {
-            sh 'npm run build-pa11y'
+            steps {
+                sh 'npm run build-pa11y'
+            }
         }
         //  Pretend this is a Deploy step
         stage('Lighthouse') {
-            sh 'npm install -g lighthouse-batch'
-            sh 'lighthouse-batch -s https://www.google.com,https://www.cynerge.com'
+            steps {
+                sh 'npm install -g lighthouse-batch'
+                sh 'lighthouse-batch -s https://www.google.com,https://www.cynerge.com'
+            }
         }
     }
     //     stage('Build') {
