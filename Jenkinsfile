@@ -1,5 +1,6 @@
 pipeline {
-    // environment {
+    environment {
+        scannerHome = tool 'Sonarqube'
     //     registry = "luther007/jenkins-eks-automated"
     //     registryCredential = 'docker-hub-credentials'
     //     releaseName = 'jenkins'
@@ -9,7 +10,7 @@ pipeline {
     //     AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
     //     AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
     //     PATH = "/root/bin:${env.PATH}"
-    // }
+    }
 
     agent {
         docker {
