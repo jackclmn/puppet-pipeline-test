@@ -56,3 +56,4 @@ Thumbs.db
 
 # .tfvars files
 *.tfvars
+.scannerwork
