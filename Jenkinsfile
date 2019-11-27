@@ -51,7 +51,8 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv(installationName: 'AWS-Sonarqube') {
-                    sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
+                    // sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
