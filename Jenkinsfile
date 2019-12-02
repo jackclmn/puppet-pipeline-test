@@ -1,5 +1,5 @@
 pipeline {
-    // agent any
+    agent any
     // environment {
     //     scannerHome = tool 'Sonarqube'
     // //     registry = "luther007/jenkins-eks-automated"
@@ -12,12 +12,6 @@ pipeline {
     // //     AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
     // //     PATH = "/root/bin:${env.PATH}"
     // }
-    agent {
-        docker {
-            image 'luther007/cynerge_images:latest'
-            args '-u root'
-        }
-    }
 
     stages {
         // stage('Install') {
@@ -49,7 +43,6 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-            agent any
             environment {
                 scannerHome = tool 'Sonarqube'
             }            
@@ -61,6 +54,12 @@ pipeline {
             }
         }
         stage('Pa11y') {
+            agent {
+                docker {
+                    image 'luther007/cynerge_images:latest'
+                    args '-u root'
+                }
+            }
             steps {
                 sh 'npm run build-pa11y'
             }
