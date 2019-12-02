@@ -36,6 +36,12 @@ pipeline {
         //     }
         // }
         stage('Dependencies') {
+            agent {
+                docker {
+                    image 'luther007/cynerge_images:latest'
+                    args '-u root'
+                }
+            }
             steps {
                 echo 'Installing...'
                 sh 'echo $GIT_BRANCH'
