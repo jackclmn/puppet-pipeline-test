@@ -1,7 +1,7 @@
 {
     "defaults": {
         "wait": 5000,
-        "standard": "Section508"
+        "standard": "Section508",
         "chromeLaunchConfig": {
             "args": ["--no-sandbox"]
         }
