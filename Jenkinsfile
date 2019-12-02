@@ -49,15 +49,14 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-            agent { label 'master' }
             environment {
                 scannerHome = tool 'Sonarqube'
             }
-            // agent {
-            //     docker {
-            //         image 'maven:3.6.2-jdk-11-slim'
-            //     }
-            // }
+            agent {
+                docker {
+                    image 'maven:3.6.2-jdk-11-slim'
+                }
+            }
             steps {
                 withSonarQubeEnv('AWS-Sonarqube') {
                     // sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
