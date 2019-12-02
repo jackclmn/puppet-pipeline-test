@@ -1,16 +1,16 @@
 pipeline {
-    environment {
-        scannerHome = tool 'Sonarqube'
-    //     registry = "luther007/jenkins-eks-automated"
-    //     registryCredential = 'docker-hub-credentials'
-    //     releaseName = 'jenkins'
-    //     chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
-    //     valuePath = 'deploy/feature/app.values.yml'
-    //     dockerImage = ''
-    //     AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
-    //     AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
-    //     PATH = "/root/bin:${env.PATH}"
-    }
+    // environment {
+    //     scannerHome = tool 'Sonarqube'
+    // //     registry = "luther007/jenkins-eks-automated"
+    // //     registryCredential = 'docker-hub-credentials'
+    // //     releaseName = 'jenkins'
+    // //     chartPath = 'deploy/charts/puppet-pipeline-test-jenkins'
+    // //     valuePath = 'deploy/feature/app.values.yml'
+    // //     dockerImage = ''
+    // //     AWS_ACCESS_KEY_ID     = credentials('JenkinsAWSKey')
+    // //     AWS_SECRET_ACCESS_KEY = credentials('JenkinsAWSKeySecret')
+    // //     PATH = "/root/bin:${env.PATH}"
+    // }
 
     agent {
         docker {
@@ -44,16 +44,18 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-            agent {
-                docker {
-                    image 'maven:3.6.2-jdk-11-slim'
-                }
+            environment {
+                scannerHome = tool 'Sonarqube'
             }
+            // agent {
+            //     docker {
+            //         image 'maven:3.6.2-jdk-11-slim'
+            //     }
+            // }
             steps {
                 withSonarQubeEnv('AWS-Sonarqube') {
-                    sh 'mvn clean package sonar:sonar'
                     // sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
-                    // sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
