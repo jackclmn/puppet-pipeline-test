@@ -51,8 +51,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('AWS-Sonarqube') {
-                        sh 'mvn clean package sonar:sonar'
-                    }
+                    sh 'mvn clean package sonar:sonar'
                     // sh '/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonarqube/bin/sonar-scanner'
                     // sh "${scannerHome}/bin/sonar-scanner"
                 }
