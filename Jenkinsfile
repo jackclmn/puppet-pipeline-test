@@ -36,11 +36,11 @@ pipeline {
                 // sh 'apt install -y ./google-chrome*.deb'
         //     }
         // }
-        stage('SCM') {
-            steps {
-                git url: 'https://github.com/LutherJolliff/puppet-pipeline-test.git'
-            }
-        }
+        // stage('SCM') {
+        //     steps {
+        //         git url: 'https://github.com/LutherJolliff/puppet-pipeline-test.git'
+        //     }
+        // }
         stage('Dependencies') {
             steps {
                 echo 'Installing...'
