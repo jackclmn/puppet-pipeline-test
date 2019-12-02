@@ -63,6 +63,18 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
+            post {
+                always {
+                    publishHTML (target: [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: './report/lighthouse',
+                        reportFiles: 'www_cynerge_com.report.html, www_google_com.report.html',
+                        reportName: "Lighthouse"
+                    ])
+                }
+            }
         }
         stage('Pa11y') {
             steps {
