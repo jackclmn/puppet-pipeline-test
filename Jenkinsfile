@@ -63,6 +63,18 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
+        }
+        stage('Pa11y') {
+            steps {
+                sh 'npm run build-pa11y'
+            }
+        }
+        //  Pretend this is a Deploy step
+        stage('Lighthouse') {
+            steps {
+                sh 'npm install -g lighthouse-batch'
+                sh 'lighthouse-batch -h -s https://www.google.com,https://www.cynerge.com'
+            }
             post {
                 always {
                     publishHTML (target: [
@@ -75,18 +87,7 @@ pipeline {
                     ])
                 }
             }
-        }
-        stage('Pa11y') {
-            steps {
-                sh 'npm run build-pa11y'
-            }
-        }
-        //  Pretend this is a Deploy step
-        stage('Lighthouse') {
-            steps {
-                sh 'npm install -g lighthouse-batch'
-                sh 'lighthouse-batch -s https://www.google.com,https://www.cynerge.com'
-            }
+
         }
     }
     //     stage('Build') {
