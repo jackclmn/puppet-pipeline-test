@@ -9,13 +9,14 @@ import {
   NgForm,
   Validators
 } from "@angular/forms";
-
 @Component({
   selector: "app-base-create",
   templateUrl: "./base-create.component.html",
   styleUrls: ["./base-create.component.css"]
 })
 export class BaseCreateComponent implements OnInit {
+  value: any;
+  matcher: any;
   baseForm: FormGroup;
   city = "";
   state = "";
@@ -24,13 +25,11 @@ export class BaseCreateComponent implements OnInit {
   employees = "";
   description = "";
   contact = "";
-
   constructor(
     private router: Router,
     private api: ApiService,
     private formBuilder: FormBuilder
   ) {}
-
   ngOnInit() {
     this.baseForm = this.formBuilder.group({
       city: [null, Validators.required],
@@ -42,7 +41,6 @@ export class BaseCreateComponent implements OnInit {
       contact: [null, Validators.required]
     });
   }
-
   onFormSubmit(form: NgForm) {
     this.api.postBase(form).subscribe(
       res => {

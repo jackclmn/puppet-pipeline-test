@@ -9,13 +9,14 @@ import {
   NgForm,
   Validators
 } from "@angular/forms";
-
 @Component({
   selector: "app-base-edit",
   templateUrl: "./base-edit.component.html",
   styleUrls: ["./base-edit.component.css"]
 })
 export class BaseEditComponent implements OnInit {
+  value: any;
+  matcher: any;
   baseForm: FormGroup;
   id = "";
   city = "";
@@ -25,14 +26,12 @@ export class BaseEditComponent implements OnInit {
   employees = "";
   description = "";
   contact = "";
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private api: ApiService,
     private formBuilder: FormBuilder
   ) {}
-
   ngOnInit() {
     this.getBase(this.route.snapshot.params.id);
     this.baseForm = this.formBuilder.group({
@@ -45,7 +44,6 @@ export class BaseEditComponent implements OnInit {
       contact: [null, Validators.required]
     });
   }
-
   getBase(id) {
     this.api.getBase(id).subscribe(data => {
       this.id = data._id;
@@ -60,7 +58,6 @@ export class BaseEditComponent implements OnInit {
       });
     });
   }
-
   onFormSubmit(form: NgForm) {
     this.api.updateBase(this.id, form).subscribe(
       res => {
@@ -72,7 +69,6 @@ export class BaseEditComponent implements OnInit {
       }
     );
   }
-
   bookDetails() {
     this.router.navigate(["/base-details", this.id]);
   }

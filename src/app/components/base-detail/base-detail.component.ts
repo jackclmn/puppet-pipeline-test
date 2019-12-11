@@ -1,20 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../../services/api.service";
 import { ActivatedRoute, Router } from "@angular/router";
-
 @Component({
   selector: "app-base-detail",
   templateUrl: "./base-detail.component.html",
   styleUrls: ["./base-detail.component.css"]
 })
 export class BaseDetailComponent implements OnInit {
-  base = {};
+  value: any;
+  matcher: any;
+  base: any;
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
     private router: Router
   ) {}
-
   ngOnInit() {
     this.getBaseDetails(this.route.snapshot.params.id);
   }

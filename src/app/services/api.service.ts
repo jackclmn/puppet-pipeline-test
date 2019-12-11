@@ -10,7 +10,7 @@ import { Injectable } from "@angular/core";
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" })
 };
-const apiUrl = "/api";
+const apiUrl = "https://qixlay3yu8.execute-api.us-east-1.amazonaws.com/prod/api";
 
 @Injectable({
   providedIn: "root"
