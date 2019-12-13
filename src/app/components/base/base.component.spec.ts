@@ -6,7 +6,7 @@ import {
 } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
-import { MatTableModule } from "@angular/material";
+import { MatTableModule } from "@angular/material/table";
 
 import { BaseComponent } from "./base.component";
 
